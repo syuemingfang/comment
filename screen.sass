@@ -1,0 +1,97 @@
+@import "compass/css3"
+/*!
+# Gird 100% CSS Framework v0.1.0.0
+ Copyright © 2013 MingFang. All rights reserved.
+ syuemningfang@gmail.com
+ Date: Tue Aug 06 2013 16:47:48 GMT+0800 (Central Standard Time)
+
+## How to Use
+   Copy code from the <head> and </head> tags and paste it on your page.
+	<link href='gird100.css' /> 
+****************************************************************************************************/
+.wrapper
+	width: 1000px
+@media(min-width: 1200px)
+	.wrapper
+		width: 1200px
+@media(max-width: 700px)
+	.wrapper
+		width: 700px
+@media(max-width: 300px)
+	.wrapper
+		width: 300px
+/*!
+## Documentation
+| Class Name | Description |
+----------------------------*/
+@for $i from 1 through 100
+/*!
+| g | 1 ~ 100 Grid |
+----------------------------*/
+	.g#{$i}
+		float: left
+		width: $i*1%
+		height: 50px
+	@for $j from 1 through 100
+		.g#{$i}>.g#{$j}
+			@if 1/($i*0.01)*$j >= 100
+				width: 100%
+			@else 
+				width: 1/($i*0.01)*$j*1%
+
+@for $i from 1 through 100
+/*! 
+| m | 1 ~ 100 Margin |
+----------------------------*/
+	.mr#{$i}
+		margin-right: $i*1%
+	.ml#{$i}
+		margin-left: $i*1%
+	.mt#{$i}
+		margin-top: $i*1%
+	.mb#{$i}
+		margin-bottom: $i*1%
+	.mx#{$i}
+		margin-left: $i/2*1%
+		margin-right: $i/2*1%
+	.my#{$i}
+		margin-top: $i/2*1%
+		margin-bottom: $i/2*1%
+	@for $j from 1 through 100
+		@if 1/($i*0.01)*$j >= 100
+			.m#{$i}
+				>.mr#{$j}
+					margin-right: 100%
+				>.ml#{$j}
+					margin-left: 100%
+				>.mt#{$j}
+					margin-top: 100%
+				>.mb#{$j}
+					margin-bottom: 100%
+				>.mx#{$j}
+					margin-left: 50%
+					margin-right: 50%
+				>.my#{$j}
+					margin-top: 50%
+					margin-bottom: 50%
+		@else 
+			.m#{$i}
+				>.mr#{$j}
+					margin-right: 1/($i*0.01)*$j*1%
+				>.ml#{$j}
+					margin-left: 1/($i*0.01)*$j*1%
+				>.mt#{$j}
+					margin-top: 1/($i*0.01)*$j*1%
+				>.mb#{$j}
+					margin-bottom: 1/($i*0.01)*$j*1%
+				>.mx#{$j}
+					margin-left: 1/($i*0.01)*$j*1*0.5%
+					margin-right: 1/($i*0.01)*$j*1*0.5%
+				>.my#{$j}
+					margin-top: 1/($i*0.01)*$j*1*0.5%
+					margin-bottom: 1/($i*0.01)*$j*1*0.5%
+
+/* Margin
+##License / Download
+The latest source code is available on GitHub.
+*/
