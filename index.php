@@ -3,8 +3,7 @@
 
 # You Comment I Making
   Remove Somebody in HTML, CSS and Javascript. 
-  [Getting Started](http://comment.cxm.tw)
-  [GitHub project](https://github.com/syuemingfang/syuemingfang-comment)
+  [Getting Started](http://comment.cxm.tw) [GitHub project](https://github.com/syuemingfang/syuemingfang-comment)
 
 ****************************************************************************************************/
 
@@ -18,7 +17,6 @@
 
 ****************************************************************************************************/
 //!
-//!****************************************************************************************************
 //!## Class
 class Comment{
   //!### Comment
@@ -35,7 +33,7 @@ class Comment{
       $file=fopen($filename, 'r');
       if($file != null){
         while(!feof($file)){
-          $str.=fgets($file)."\n";
+          $str.=fgets($file);
         }
         fclose($file);
       }
