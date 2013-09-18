@@ -2,9 +2,9 @@
 /*!
 
 # You Comment I Making
-  Remove Somebody in HTML, CSS and Javascript. 
+  Get Your Comment then Make Into Page. 
   
-  [Getting Started](http://comment.cxm.tw) [GitHub project](https://github.com/syuemingfang/syuemingfang-comment)
+  [Getting Started](http://comment.cxm.tw) [GitHub project](https://github.com/syuemingfang/syuemingfang-comment) [Documentation](http://comment.cxm.tw/?url=https://raw.github.com/syuemingfang/syuemingfang-comment/master/comment.json)
 
 ****************************************************************************************************/
 
@@ -17,10 +17,11 @@
   + PclZip
 
 ****************************************************************************************************/
+
 //!
 //!## Class
-class Comment{
-  //!### Comment
+class comment{
+  //!### comment
   public $filename_zip;
   public $filename_html;
   public $filename_markdown;  
@@ -260,7 +261,7 @@ if(!isset($_REQUEST['ff']) && !isset($_REQUEST['md']) && !isset($_REQUEST['url']
   header('Content-type: text/html');
   require('main.html');
 } else{
-  $main=new Comment();
+  $main=new comment();
   $main->temp_dir='temp';
   $main->filename_zip='html.zip';
   $main->filename_markdown='README.md';  

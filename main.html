@@ -11,7 +11,7 @@
       <div class='container'>
         <div class='row'>
           <div class='col-12 text-center'><h1>You Comment I Making</h1>
-          <p class='lead text-muted'>Select Your Input Method Then Let's Go.</p>
+          <p class='lead text-muted'>Get Your Comment then Make Into Page.</p>
           <div class='text-left'><h4 class='text-muted'>(A)</h4></div>
           </div>
         </div>
@@ -30,46 +30,6 @@
           <div class='btn btn-info btn-lg btn-block' ondragover='drag.dragover(event)' ondrop='drag.drop(event)'>Drap Here<br />Then Auto Return<div id='progress'></div></div>
           <small class='text-info'>Supports the following browsers: IE9+ Chrome Firefox</small>
           </div>
-            <script>
-            (function(a){
-                // Browser: Firefox Chrome IE10 //
-                dragover=function(evt){
-                    evt.preventDefault();
-                }
-                drop=function(evt){
-                    evt.preventDefault();
-                    // Declared //
-                    var f=evt.dataTransfer.files, //Get Files By DataTransfer
-                    fd=new FormData(),
-                    xhr=new XMLHttpRequest(),
-                    progress=document.getElementById('progress');
-                    // Connect PHP //
-                    xhr.open('POST', 'index.php');
-                    xhr.upload.onprogress=function(evt){
-                        if(evt.lengthComputable){
-                            var complete=(evt.loaded/evt.total*100|0);
-                            if(100 == complete){
-                                complete=99.9;
-                            }
-                            progress.innerHTML=complete+'%';
-                        }
-                    }
-                    xhr.onload=function(){
-                        progress.innerHTML='100%';
-                        location.href='index.php?md=markdown'
-                    }
-                    // Connect Preview //
-                    for(var i in f){
-                        var fr=new FileReader();
-                        fr.readAsDataURL(f[i]);
-                        fd.append('ff[]', f[i]);
-                    }
-                    xhr.send(fd);
-                }
-                a.drag=this;
-                return this;
-            })(window);
-            </script>
         </div>
      </div>
    </div>
@@ -86,6 +46,7 @@
      </div>
    </div>
  </form>
+ <script src="js/drop.js"></script>
 </body>
 </html>
 
